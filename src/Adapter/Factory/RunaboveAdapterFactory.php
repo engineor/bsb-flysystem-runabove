@@ -6,9 +6,11 @@ use BsbFlysystem\Exception\RequirementsException;
 use Engineor\Flysystem\RunaboveAdapter as Adapter;
 use Engineor\Flysystem\Runabove;
 use UnexpectedValueException;
+use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
+use BsbFlysystem\Adapter\Factory\AbstractAdapterFactory;
 
-class RunaboveAdapterFactory extends AbstractAdapterFactory
+class RunaboveAdapterFactory extends AbstractAdapterFactory implements FactoryInterface
 {
 
     /**

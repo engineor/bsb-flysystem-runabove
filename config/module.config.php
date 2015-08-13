@@ -3,7 +3,9 @@
 return [
     'bsb_flysystem'   => [
         'adapter_map' => [
-            'runabove' => 'Engineor\Flysystem\Adapter\Factory\RunaboveAdapterFactory',
+            'factories' => [
+                'runabove' => 'Engineor\Flysystem\Adapter\Factory\RunaboveAdapterFactory',
+            ],
         ],
     ],
 ];
