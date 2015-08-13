@@ -1,0 +1,27 @@
+{
+    "name": "engineor/bsb-flysystem-runabove",
+    "description": "Bridge to add flysystem-runabove to BsbFlysystem (which provides Flysystem to ZF2 projects)",
+    "require": {
+        "engineor/flysystem-runabove": "^1.0@dev",
+        "bushbaby/flysystem": "^1.0@dev"
+    },
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Dutrion",
+            "email": "thomas@engineor.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Engineor\\Flysystem\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },    
+    "minimum-stability": "dev"
+}
