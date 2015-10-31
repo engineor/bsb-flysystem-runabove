@@ -26,11 +26,12 @@ class RunaboveAdapterFactory extends AbstractAdapterFactory implements FactoryIn
         }
 
         $client = new Runabove([
-            'username'  => $this->options['username'],
-            'password'  => $this->options['password'],
-            'tenantId'  => $this->options['tenantId'],
-            'container' => $this->options['container'],
-            'region'    => $this->options['region'],
+            'username'          => $this->options['username'],
+            'password'          => $this->options['password'],
+            'tenantId'          => $this->options['tenantId'],
+            'container'         => $this->options['container'],
+            'region'            => $this->options['region'],
+            'identity_endpoint' => $this->options['identity_endpoint'],
         ]);
 
         return new Adapter($client->getContainer(), $this->options['prefix']);
@@ -59,6 +60,10 @@ class RunaboveAdapterFactory extends AbstractAdapterFactory implements FactoryIn
 
         if (!isset($this->options['region'])) {
             $this->options['region'] = Runabove::REGION_EUROPE;
+        }
+
+        if (!isset($this->options['identity_endpoint'])) {
+            $this->options['identity_endpoint'] = Runabove::IDENTITY_ENDPOINT;
         }
 
         if (!isset($this->options['prefix'])) {

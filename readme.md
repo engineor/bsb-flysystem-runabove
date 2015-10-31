@@ -1,4 +1,4 @@
-# Bridge for Flysystem Adapter for Runabove Object Storage on BsbFlysystem (ZF2).
+# Bridge for Flysystem Adapter for ~~Runabove~~ **OVH** Object Storage on BsbFlysystem (ZF2).
 
 [![Author](http://img.shields.io/badge/author-@tdutrion-blue.svg?style=flat-square)](https://twitter.com/tdutrion)
 [![Build Status](https://img.shields.io/travis/engineor/bsb-flysystem-runabove/master.svg?style=flat-square)](https://travis-ci.org/engineor/bsb-flysystem-runabove)
@@ -56,7 +56,8 @@ return [
                     'password'  => ':password',
                     'tenantId'  => ':tenantId',
                     'container' => 'flysystem',
-                    'region'    => Runabove::REGION_EUROPE,
+                    'region'    => Runabove::REGION_EUROPE, // optional
+                    'identity_endpoint' => Runabove::IDENTITY_ENDPOINT, // optional
                 ],
             ],
         ],
@@ -70,3 +71,6 @@ return [
     ],
 ];
 ```
+
+**Because of a service migration, the Object Storage should now be used on OVH public cloud.**
+Please use `https://auth.cloud.ovh.net/v2.0` as `identity_endpoint` values. Your `region` should be either `SBG1`, `GRA1` or `BHS1`.
